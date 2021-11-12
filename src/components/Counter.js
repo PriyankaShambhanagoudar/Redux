@@ -1,29 +1,28 @@
+import { useDispatch, useSelector } from "react-redux";
 
-import { useDispatch, useSelector, } from 'react-redux'
-
-import classes from './Counter.module.css';
+import classes from "./Counter.module.css";
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
-//Functional component 
+//Functional component
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter);
-  const show = useSelector(state => state.showCounter)
+  const counter = useSelector((state) => state.counter);
+  const show = useSelector((state) => state.showCounter);
 
   const incrementHandler = () => {
     dispatch({ type: 'increment' });
   };
   const increaseHandler = () => {
-    dispatch({ type: 'increase', amount: 10 })
-  }
+    dispatch({ type: "increase", amount: 10 });
+  };
 
   const decrementHandler = () => {
-    dispatch({ type: 'decrement' });
+    dispatch({ type: "decrement" });
   };
 
   const toggleCounterHandler = () => {
-    dispatch({ type: 'toggle' })
+    dispatch({ type: "toggle" });
   };
 
   return (
@@ -34,7 +33,6 @@ const Counter = () => {
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={increaseHandler}>Increment by 10</button>
         <button onClick={decrementHandler}>Decrement</button>
-
       </div>
       <button onClick={toggleCounterHandler}>Toggle Counter</button>
     </main>
@@ -46,8 +44,7 @@ export default Counter;
 
 //import { useDispatch, useSelector, connect } from 'react-redux'
 //import { Component } from 'react'
-//class based component 
-
+//class based component
 
 // class Counter extends Component {
 //   incrementHandler() {
